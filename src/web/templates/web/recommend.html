@@ -3,7 +3,10 @@
 {% block body %}
 
 <div class="container-fluid">
-	<h2>Recommendations for You </h2>
+	<h2 style="background: -webkit-linear-gradient(#bdc3c7, #2c3e50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;">Recommendations for You </h2>
 </div>
 
 
@@ -14,12 +17,12 @@
             {% if movie_list %}
             {% for movie in movie_list %}
                 <div class="col-sm-2 col-md-2 ">
-                    <div class="thumbnail">
+                    <div class="thumbnail" data-aos="flip-right" data-aos-duration="800">
                         <h4>{{movie.title}}</h4>
                         <a href="{% url 'detail' movie.id %}">
                             <img src="{{ movie.movie_logo.url}}" class="img-responsive">
                         </a>
-                        <h5>{{movie.genre}}</h5>
+                        <h5 class="bg">{{movie.genre}}</h5>
                         <div class="caption">
 
                             <!-- View Details -->
